@@ -10,9 +10,10 @@ import { MatCardModule } from '@angular/material/card';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
-    declarations: [AppComponent, DashboardComponent],
+    declarations: [AppComponent, DashboardComponent, LocationComponent],
     imports: [
         BrowserModule,
         HttpClientModule,

@@ -2,6 +2,7 @@
     <mat-card *ngFor="let summary of weatherSummaries">
         <mat-card-title>
             <span>{{ summary.city }}</span>
+            <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(summary.description)"></span>
         </mat-card-title>
         <mat-card-subtitle>{{ summary.state }}</mat-card-subtitle>
         <mat-card-content>
@@ -19,7 +20,7 @@
             </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-stroked-button>View Details</button>
+            <button mat-stroked-button (click)="goToWeatherDetails(summary)">View Details</button>
         </mat-card-actions>
     </mat-card>
 </div>
