@@ -1,7 +1,7 @@
 <div *ngIf="!isLoading; else loadingTemplate" class="dashboard">
     <mat-card *ngFor="let summary of weatherSummaries">
         <mat-card-title>
-            <span>{{ summary.city }}</span>
+            <span class="city">{{ summary.city }}</span>
             <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(summary.description)"></span>
         </mat-card-title>
         <mat-card-subtitle>{{ summary.state }}</mat-card-subtitle>
