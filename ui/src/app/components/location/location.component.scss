@@ -1,0 +1,40 @@
+:host {
+    width: 100%;
+    margin: 0 1rem;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+}
+
+.forecast-container {
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.forecast-card {
+    min-width: 9rem;
+}
+
+mat-card-title.mat-card-title {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-card-content.mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0;
+}
+
+.data-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,1 +1,49 @@
-<p>location works!</p>
+<ng-container *ngIf="!isLoading; else loadingTemplate">
+    <mat-card>
+        <mat-card-title>
+            <span>{{ weatherDetails.city }}</span>
+            <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(weatherDetails.description)"></span>
+        </mat-card-title>
+        <mat-card-subtitle>{{ weatherDetails.state }}</mat-card-subtitle>
+        <mat-card-content>
+            <div class="data-line">
+                <span>Current Temperature</span><b>{{ weatherDetails.currentTemperature }} °F</b>
+            </div>
+            <div class="data-line">
+                <span>Current Wind Speed</span><b>{{ weatherDetails.currentWindSpeed }} mph</b>
+            </div>
+            <div class="data-line">
+                <span>Current Humidity</span><b>{{ weatherDetails.currentHumidity }}%</b>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="forecast-container">
+        <mat-card *ngFor="let forecast of weatherDetails.forecast" class="forecast-card">
+            <mat-card-title>
+                <span>Day {{ forecast.day }}</span>
+                <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(forecast.description)"></span>
+            </mat-card-title>
+            <mat-card-content>
+                <div class="data-line">
+                    <span>Max:</span><b>{{ forecast.maxTemperature }} °F</b>
+                </div>
+                <div class="data-line">
+                    <span>Avg:</span><b>{{ forecast.avgTemperature }} °F</b>
+                </div>
+                <div class="data-line">
+                    <span>Min:</span><b>{{ forecast.minTemperature }} °F</b>
+                </div>
+                <div class="data-line">
+                    <span>Wind:</span><b>{{ forecast.windSpeed }} mph</b>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-template #loadingTemplate>
+    <div class="spinner-container">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
