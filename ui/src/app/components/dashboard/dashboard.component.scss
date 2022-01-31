@@ -1,0 +1,32 @@
+.dashboard {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+mat-card-title.mat-card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-card-content.mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0;
+}
+
+.data-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.data-line-value {
+    margin-left: 1rem;
+}
+
+@media (min-width: 48rem) {
+    .dashboard {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
